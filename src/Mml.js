@@ -9,7 +9,6 @@ function Mml(props) {
         vrl: props.videos[0].link
     })
 
-    console.log(refs)
     const handleScroll = useCallback(e => {
         setPlayerr({...playerr, muted: false})
         refs.current.forEach(ref => {
