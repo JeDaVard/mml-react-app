@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tContainer {
+  height: 200px;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  font-family: monospace;
+}
+
+.video {
+  scroll-snap-align: start;
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+
+.video2 {
+  background: green;
+}
+
+.parent {
+  display: flex;
+  overflow: auto;
+  flex: none;
+  width: 100%;
+  height: 100vh;
+  flex-flow: column nowrap;
+  scroll-snap-type: y mandatory;
+}
+
+.parent::-webkit-scrollbar {
+  display: none;
+}
+
+.child {
+  object-fit: cover;
+  text-align: center;
+  scroll-snap-align: center;
+  flex: none;
+  width: 100%;
+  height: 100%;
+  line-height: 1.3;
+  font-size: 64px;
+  background-color: #474747;
+}
+
+h1  {
+  font-size: 3.1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.start {
+  background: #1c0f0f;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start button {
+  margin-top: -2rem;
+  background: white;
+  padding: .6rem 2rem;
+  height: 3.4rem;
+  font-size: 2rem;
+  position: relative;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.start button:hover,
+.start button:active {
+  box-shadow: 0 0 30px rgba(238, 147, 172, 0.4);
+}
+.start button::after {
+  content: '';
+  width: 3.4rem;
+  position: absolute;
+  height: 3.4rem;
+  background: #e31a62;
+  top: 0;
+  right: 7px;
+  z-index: 200;
+  transition: all .2s;
+}
+
+.start button::before {
+  content: '';
+  width: 3.4rem;
+  position: absolute;
+  height: 3.4rem;
+  background: #5cfffa;
+  top: 0;
+  left: 7px;
+  z-index: 200;
+  transition: all .2s;
+}
+
+.start button:hover::after,
+.start button:active::after {
+  right: -20px;
+}
+
+.start button:hover::before,
+.start button:active::before {
+  left: -20px;
+}
