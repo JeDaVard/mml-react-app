@@ -9,6 +9,8 @@ function Mml(props) {
         vrl: props.videos[0].link
     })
 
+    // const [state, setState] = useState(props.videos.map(video => video.link))
+
     const handleScroll = useCallback(e => {
         setPlayerr({...playerr, muted: false})
         refs.current.forEach(ref => {
@@ -36,15 +38,17 @@ function Mml(props) {
     return (
         <div ref={player} className="parent" dir="ltr">
             {props.videos.map((video, index) => (
-                <video
-                    ref={refs.current[index]}
-                    src={video.link}
-                    loop
-                    playsInline
-                    muted={playerr.muted}
-                    autoPlay={video.link === playerr.vrl}
-                    className={'child'}
-                    key={video._id}/>
+                <div className={'child'} key={video.link}>
+                    <video
+                        ref={refs.current[index]}
+                        src={video.link}
+                        loop
+                        playsInline
+                        muted={playerr.muted}
+                        autoPlay={video.link === playerr.vrl}
+                        className={'child'}
+                        key={video._id}/>
+                </div>
             ))}
         </div>
     );
