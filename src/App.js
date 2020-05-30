@@ -36,7 +36,7 @@ function App(props) {
     const postVideo = e => {
         e.preventDefault();
 
-        if (!uploadFile || uploadFile.type.toLowerCase() !== 'video/mp4') return console.log('Only mp4 allowed');
+        // if (!uploadFile || uploadFile.type.toLowerCase() !== 'video/mp4') return console.log('Only mp4 allowed');
         setData(state => ({...state, loading: true}))
         const video = new FormData();
         video.append('file', uploadFile)
