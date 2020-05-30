@@ -46,7 +46,7 @@ function Mml(props) {
                         playsInline
                         muted={playerr.muted}
                         autoPlay={video.link === playerr.vrl}
-                        className={'child'}
+                        className={'video'}
                         key={video._id}/>
                 </div>
             ))}
