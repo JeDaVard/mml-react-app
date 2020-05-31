@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 function Mml(props) {
     const player = useRef(null);
@@ -44,6 +44,8 @@ function Mml(props) {
                         src={video.link}
                         loop
                         playsInline
+                        poster={video.link.slice(0, video.link.length-4) + '.thumb.jpg'}
+                        preload="none"
                         muted={playerr.muted}
                         autoPlay={video.link === playerr.vrl}
                         className={'video'}

@@ -43,7 +43,7 @@ function App(props) {
         video.append('file', uploadFile)
 
         fetch(`${process.env.REACT_APP_SERVER}/api/videos`, {
-            method: 'POST',
+            method: 'PUT',
             body: video,
             mode: 'cors'
         })
